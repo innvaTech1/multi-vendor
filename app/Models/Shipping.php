@@ -10,7 +10,7 @@ class Shipping extends Model
     use HasFactory;
 
     public function city(){
-        return $this->belongsTo(City::class);
+        return $this->belongsTo(City::class)->withDefault();
     }
 
     protected $fillable = [

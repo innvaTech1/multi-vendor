@@ -10,15 +10,15 @@ class OrderProduct extends Model
     use HasFactory;
 
     public function seller(){
-        return $this->belongsTo(Vendor::class,'seller_id');
+        return $this->belongsTo(Vendor::class,'seller_id')->withDefault();
     }
 
     public function orderProductVariants(){
-        return $this->hasMany(OrderProductVariant::class);
+        return $this->hasMany(OrderProductVariant::class)->withDefault();
     }
 
     public function order(){
-        return $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class)->withDefault();
     }
 
 }

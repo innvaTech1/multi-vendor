@@ -10,6 +10,6 @@ class PopularPost extends Model
     use HasFactory;
 
     public function blog(){
-        return $this->belongsTo(Blog::class);
+        return $this->belongsTo(Blog::class)->withDefault();
     }
 }

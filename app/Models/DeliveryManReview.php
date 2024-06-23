@@ -10,14 +10,14 @@ class DeliveryManReview extends Model
     use HasFactory;
 
     public function deliveryman(){
-        return $this->belongsTo(DeliveryMan::class,'delivery_man_id');
+        return $this->belongsTo(DeliveryMan::class,'delivery_man_id')->withDefault();
     }
 
     public function user(){
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class,'user_id')->withDefault();
     }
 
     public function order(){
-        return $this->belongsTo(Order::class,'order_id');
+        return $this->belongsTo(Order::class,'order_id')->withDefault();
     }
 }

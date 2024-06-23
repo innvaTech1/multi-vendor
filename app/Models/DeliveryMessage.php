@@ -10,10 +10,10 @@ class DeliveryMessage extends Model
     use HasFactory;
 
     public function customer(){
-        return $this->belongsTo(User::class, 'customer_id', 'id');
+        return $this->belongsTo(User::class, 'customer_id', 'id')->withDefault();
     }
 
     public function deliveryman(){
-        return $this->belongsTo(DeliveryMan::class, 'delivery_man_id', 'id');
+        return $this->belongsTo(DeliveryMan::class, 'delivery_man_id', 'id')->withDefault();
     }
 }

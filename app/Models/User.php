@@ -49,19 +49,19 @@ class User extends Authenticatable implements JWTSubject
     ];
 
     public function seller(){
-        return $this->hasOne(Vendor::class);
+        return $this->hasOne(Vendor::class)->withDefault();
     }
 
     public function city(){
-        return $this->belongsTo(City::class);
+        return $this->belongsTo(City::class)->withDefault();
     }
 
     public function state(){
-        return $this->belongsTo(CountryState::class);
+        return $this->belongsTo(CountryState::class)->withDefault();
     }
 
     public function country(){
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Country::class)->withDefault();
     }
 
 

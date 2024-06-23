@@ -10,15 +10,15 @@ class ProductReport extends Model
     use HasFactory;
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->withDefault();
     }
 
     public function product(){
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class)->withDefault();
     }
 
     public function seller(){
-        return $this->belongsTo(Vendor::class);
+        return $this->belongsTo(Vendor::class)->withDefault();
     }
 
 

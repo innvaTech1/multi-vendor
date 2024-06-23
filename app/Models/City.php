@@ -10,11 +10,11 @@ class City extends Model
     use HasFactory;
 
     public function countryState(){
-        return $this->belongsTo(CountryState::class);
+        return $this->belongsTo(CountryState::class)->withDefault();
     }
 
     public function addressCities(){
-        return $this->hasMany(Address::class);
+        return $this->hasMany(Address::class)->withDefault();
     }
 
     protected $fillable = [

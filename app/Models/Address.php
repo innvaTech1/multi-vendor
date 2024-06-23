@@ -10,14 +10,14 @@ class Address extends Model
     use HasFactory;
 
     public function country(){
-        return $this->belongsTo(Country::class)->select('id','name');
+        return $this->belongsTo(Country::class)->select('id','name')->withDefault();
     }
 
     public function countryState(){
-        return $this->belongsTo(CountryState::class,'state_id')->select('id','name');
+        return $this->belongsTo(CountryState::class,'state_id')->select('id','name')->withDefault();
     }
 
     public function city(){
-        return $this->belongsTo(City::class)->select('id','name');
+        return $this->belongsTo(City::class)->select('id','name')->withDefault();
     }
 }

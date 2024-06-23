@@ -10,6 +10,6 @@ class ProductSpecificationKey extends Model
     use HasFactory;
 
     public function productSpecifications(){
-        return $this->hasMany(ProductSpecification::class);
+        return $this->hasMany(ProductSpecification::class)->withDefault();
     }
 }

@@ -10,14 +10,14 @@ class Category extends Model
     use HasFactory;
 
     public function subCategories(){
-        return $this->hasMany(SubCategory::class);
+        return $this->hasMany(SubCategory::class)->withDefault();
     }
 
     public function products(){
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class)->withDefault();
     }
 
     public function activeSubCategories(){
-        return $this->hasMany(SubCategory::class)->where('status',1)->select(['id','name','slug','category_id']);
+        return $this->hasMany(SubCategory::class)->where('status',1)->select(['id','name','slug','category_id'])->withDefault();
     }
 }

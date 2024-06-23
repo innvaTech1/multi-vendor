@@ -10,11 +10,11 @@ class MegaMenuCategory extends Model
     use HasFactory;
 
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class)->withDefault();
     }
 
     public function subCategories(){
-        return $this->hasMany(MegaMenuSubCategory::class);
+        return $this->hasMany(MegaMenuSubCategory::class)->withDefault();
     }
 
 

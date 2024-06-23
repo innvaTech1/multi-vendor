@@ -38,6 +38,6 @@ class Setting extends Model
 
     public function currency()
     {
-        return $this->belongsTo(MultiCurrency::class);
+        return $this->belongsTo(MultiCurrency::class)->withDefault();
     }
 }

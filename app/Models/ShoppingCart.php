@@ -10,15 +10,15 @@ class ShoppingCart extends Model
     use HasFactory;
 
     public function variants(){
-        return $this->hasMany(ShoppingCartVariant::class, 'shopping_cart_id');
+        return $this->hasMany(ShoppingCartVariant::class, 'shopping_cart_id')->withDefault();
     }
 
     public function product(){
-        return $this->belongsTo(Product::class)->select(['id','name','short_name','price','offer_price','thumb_image','slug','weight']);
+        return $this->belongsTo(Product::class)->select(['id','name','short_name','price','offer_price','thumb_image','slug','weight'])->withDefault();
     }
 
     public function card_product(){
-        return $this->belongsTo(Product::class,'product_id','id');
+        return $this->belongsTo(Product::class,'product_id','id')->withDefault();
     }
 
 

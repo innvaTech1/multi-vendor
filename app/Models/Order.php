@@ -11,18 +11,18 @@ class Order extends Model
 
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->withDefault();
     }
 
     public function orderProducts(){
-        return $this->hasMany(OrderProduct::class);
+        return $this->hasMany(OrderProduct::class)->withDefault();
     }
 
     public function orderAddress(){
-        return $this->hasOne(OrderAddress::class);
+        return $this->hasOne(OrderAddress::class)->withDefault();
     }
 
     public function deliveryman(){
-        return $this->belongsTo(DeliveryMan::class, 'delivery_man_id', 'id');
+        return $this->belongsTo(DeliveryMan::class, 'delivery_man_id', 'id')->withDefault();
     }
 }

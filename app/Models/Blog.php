@@ -10,19 +10,19 @@ class Blog extends Model
     use HasFactory;
 
     public function category(){
-        return $this->belongsTo(BlogCategory::class,'blog_category_id');
+        return $this->belongsTo(BlogCategory::class,'blog_category_id')->withDefault();
     }
 
     public function admin(){
-        return $this->belongsTo(Admin::class);
+        return $this->belongsTo(Admin::class)->withDefault();
     }
 
     public function comments(){
-        return $this->hasMany(BlogComment::class);
+        return $this->hasMany(BlogComment::class)->withDefault();
     }
 
     public function activeComments(){
-        return $this->hasMany(BlogComment::class)->where('status',1);
+        return $this->hasMany(BlogComment::class)->where('status',1)->withDefault();
     }
 
 

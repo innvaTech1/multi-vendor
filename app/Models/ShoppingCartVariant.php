@@ -11,6 +11,6 @@ class ShoppingCartVariant extends Model
 
 
     public function variantItem(){
-        return $this->belongsTo(ProductVariantItem::class,'variant_item_id')->select(['id','product_variant_name','name','price']);
+        return $this->belongsTo(ProductVariantItem::class,'variant_item_id')->select(['id','product_variant_name','name','price'])->withDefault();
     }
 }

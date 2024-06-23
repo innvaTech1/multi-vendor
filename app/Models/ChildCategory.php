@@ -10,15 +10,15 @@ class ChildCategory extends Model
     use HasFactory;
 
     public function subCategory(){
-        return $this->belongsTo(SubCategory::class);
+        return $this->belongsTo(SubCategory::class)->withDefault();
     }
 
     public function category(){
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class)->withDefault();
     }
 
     public function products(){
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Product::class)->withDefault();
     }
 
 }

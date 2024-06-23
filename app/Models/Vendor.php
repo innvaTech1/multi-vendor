@@ -18,19 +18,19 @@ class Vendor extends Model
     }
 
     public function socialLinks(){
-        return $this->hasMany(VendorSocialLink::class);
+        return $this->hasMany(VendorSocialLink::class)->withDefault();
     }
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->withDefault();
     }
 
     public function products(){
-        return $this->hasMany(Product::class,'vendor_id');
+        return $this->hasMany(Product::class,'vendor_id')->withDefault();
     }
 
     public function activeReviews(){
-        return $this->hasMany(ProductReview::class,'product_vendor_id');
+        return $this->hasMany(ProductReview::class,'product_vendor_id')->withDefault();
     }
 
 

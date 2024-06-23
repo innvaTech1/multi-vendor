@@ -10,6 +10,6 @@ class PaystackAndMollie extends Model
     use HasFactory;
 
     public function currency(){
-        return $this->belongsTo(MultiCurrency::class);
+        return $this->belongsTo(MultiCurrency::class)->withDefault();
     }
 }

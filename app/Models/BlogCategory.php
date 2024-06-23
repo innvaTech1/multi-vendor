@@ -10,6 +10,6 @@ class BlogCategory extends Model
     use HasFactory;
 
     public function blogs(){
-        return $this->hasMany(Blog::class);
+        return $this->hasMany(Blog::class)->withDefault();
     }
 }

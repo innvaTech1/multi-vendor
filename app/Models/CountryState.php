@@ -10,15 +10,15 @@ class CountryState extends Model
     use HasFactory;
 
     public function country(){
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Country::class)->withDefault();
     }
 
     public function cities(){
-        return $this->hasMany(City::class);
+        return $this->hasMany(City::class)->withDefault();
     }
 
     public function addressStates(){
-        return $this->hasMany(Address::class,'state_id');
+        return $this->hasMany(Address::class,'state_id')->withDefault();
     }
 
 
