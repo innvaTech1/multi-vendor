@@ -60,7 +60,7 @@ class Product extends Model
 
 
     public function activeVariants(){
-        return $this->hasMany(ProductVariant::class)->select(['id','name','product_id'])->withDefault();
+        return $this->hasMany(ProductVariant::class)->select(['id','name','product_id']);
     }
 
 
